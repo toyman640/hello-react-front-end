@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchRandomGreeting from '../redux/store/action/greetAction';
+import { fetchRandomGreeting } from '../redux/store/reducer/greetSlice';
 
 const Greeting = () => {
   const dispatch = useDispatch();
@@ -8,8 +8,14 @@ const Greeting = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchRandomGreeting());
-    setIsLoading(false);
+    dispatch(fetchRandomGreeting())
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        // Handle errors here if needed
+        console.error('Error:', error);
+      });
   }, [dispatch]);
 
   if (isLoading) {
