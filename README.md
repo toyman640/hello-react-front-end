@@ -33,7 +33,7 @@
 
 Front End React-redux app link
 
-https://github.com/toyman640/hello-react-front-end.git
+https://github.com/toyman640/hello-rails-back-end.git
 
 Rails API - link
 
