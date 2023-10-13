@@ -11,10 +11,6 @@ const Greeting = () => {
     dispatch(fetchRandomGreeting())
       .then(() => {
         setIsLoading(false);
-      })
-      .catch((error) => {
-        // Handle errors here if needed
-        console.error('Error:', error);
       });
   }, [dispatch]);
 
